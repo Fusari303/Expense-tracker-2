@@ -7,6 +7,7 @@ const AddExpenseForm = () => {
 
 	const [name, setName] = useState('');
 	const [cost, setCost] = useState('');
+  const [date, setDate] = useState('');
 
 	const onSubmit = (event) => {
 		event.preventDefault();
@@ -15,6 +16,7 @@ const AddExpenseForm = () => {
 			id: uuidv4(),
 			name: name,
 			cost: parseInt(cost),
+      date: date
 		};
 
 		dispatch({
@@ -46,6 +48,17 @@ const AddExpenseForm = () => {
 						id='cost'
 						value={cost}
 						onChange={(event) => setCost(event.target.value)}
+					></input>
+				</div></p>
+				<p><div className='col-sm'>
+					<label for='name'>Data</label>
+					<input
+						required='required'
+						type='date'
+						className='form-control'
+						id='date'
+						value={date}
+						onChange={(event) => setDate(event.target.value)}
 					></input>
 				</div></p>
 				<div className='col-sm'>
